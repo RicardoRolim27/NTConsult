@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ntconsult.votacaoPauta.dto.AssociadoDTO;
 import com.ntconsult.votacaoPauta.entities.Associado;
@@ -16,6 +17,7 @@ public class AssociadoService {
 	@Autowired
 	private AssociadoRepository repository;
 	
+	@Transactional(readOnly = true)
 	public List<AssociadoDTO> findAll(){
 		List<Associado> list = repository.findAllByOrderByNameAsc();
 		
