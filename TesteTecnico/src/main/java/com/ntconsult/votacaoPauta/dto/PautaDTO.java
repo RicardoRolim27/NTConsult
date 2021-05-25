@@ -1,6 +1,8 @@
 package com.ntconsult.votacaoPauta.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ntconsult.votacaoPauta.entities.Pauta;
 
@@ -10,6 +12,8 @@ public class PautaDTO implements Serializable{
 	
 	private Long id;
 	private String descricao;
+	
+	private List<AssociadoDTO> associados = new ArrayList<>();
 	
 	public PautaDTO() {
 	
@@ -40,6 +44,14 @@ public class PautaDTO implements Serializable{
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public List<AssociadoDTO> getAssociados() {
+		return associados;
+	}
+
+	public void setAssociados(List<AssociadoDTO> associados) {
+		this.associados = associados;
 	};
 	
 	
