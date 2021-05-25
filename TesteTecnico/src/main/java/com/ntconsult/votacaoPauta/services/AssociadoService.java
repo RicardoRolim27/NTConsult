@@ -20,6 +20,7 @@ public class AssociadoService {
 	@Transactional(readOnly = true)
 	public List<AssociadoDTO> findAll(){
 		List<Associado> list = repository.findAllByOrderByNameAsc();
+		List<Associado> list = repository.findAllByOrderByCpfAsc();
 		
 		return list.stream().map(x -> new AssociadoDTO(x)).collect(Collectors.toList());
 	}
