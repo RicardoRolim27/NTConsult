@@ -20,14 +20,11 @@ public class Associado implements Serializable {
 	
 	private String cpf;
 	
-	private Boolean voto;
 	
 	public Associado() {};
 	
-	public Associado(String cpf, Boolean voto) {
 	public Associado(String cpf) {
 		this.cpf = cpf;
-		this.voto = voto;
 	}
 
 	public Long getId() {
@@ -46,13 +43,6 @@ public class Associado implements Serializable {
 		this.cpf = cpf;
 	}
 
-	public Boolean getVoto() {
-		return voto;
-	}
-
-	public void setVoto(Boolean voto) {
-		this.voto = voto;
-	}
 
 	@Override
 	public int hashCode() {
