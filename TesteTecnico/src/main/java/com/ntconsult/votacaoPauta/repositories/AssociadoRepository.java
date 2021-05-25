@@ -8,5 +8,5 @@ import com.ntconsult.votacaoPauta.entities.Associado;
 
 @Repository
 public interface AssociadoRepository extends JpaRepository<Associado, Long> {
-	List<Associado> findAllByOrderByNameAsc();
+	List<Associado> findAllByOrderByCpfAsc();
 }

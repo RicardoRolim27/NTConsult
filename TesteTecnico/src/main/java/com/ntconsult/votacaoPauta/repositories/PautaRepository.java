@@ -10,5 +10,6 @@ import com.ntconsult.votacaoPauta.entities.Pauta;
 public interface PautaRepository extends JpaRepository<Pauta, Long>{
 	
 	List<Pauta> findAllByOrderByNameAsc();
+	List<Pauta> findAllByOrderByDescricaoAsc();
 
 }
