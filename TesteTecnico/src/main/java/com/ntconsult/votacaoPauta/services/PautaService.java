@@ -18,15 +18,12 @@ import com.ntconsult.votacaoPauta.repositories.PautaRepository;
 public class PautaService {
 	
 	@Autowired
-	private PautaRepository repository;
 	private PautaRepository pautaRepository;
 	
 	@Autowired
 	private AssociadoRepository associadoRepo;  
 	
 	public List<PautaDTO> findAll(){
-		List<Pauta> list = repository.findAllByOrderByNameAsc();
-		List<Pauta> list = pautaRepository.findAllByOrderByNameAsc();
 		List<Pauta> list = pautaRepository.findAllByOrderByDescricaoAsc();
 		
 		return list.stream().map(x -> new PautaDTO(x)).collect(Collectors.toList());
