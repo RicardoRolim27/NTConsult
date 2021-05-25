@@ -25,6 +25,7 @@ public class Associado implements Serializable {
 	public Associado() {};
 	
 	public Associado(String cpf, Boolean voto) {
+	public Associado(String cpf) {
 		this.cpf = cpf;
 		this.voto = voto;
 	}
