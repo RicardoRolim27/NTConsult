@@ -26,6 +26,7 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
+	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "pauta_associados", 
 	joinColumns = @JoinColumn(name = "pauta_id"), 
