@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pauta")
+@Table(name = "associado")
 public class Associado implements Serializable {
 
 	private static final long serialVersionUID = 1L;
