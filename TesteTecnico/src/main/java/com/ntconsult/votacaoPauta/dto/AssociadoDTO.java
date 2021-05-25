@@ -10,23 +10,20 @@ public class AssociadoDTO implements Serializable {
 	
 	private Long id;
 	private String cpf;
-	private Boolean voto;
 	
 	public AssociadoDTO() {
 		
 	}
 
-	public AssociadoDTO(Long id, String cpf, Boolean voto) {
+	public AssociadoDTO(Long id, String cpf) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
-		this.voto = voto;
 	}
 
 	public AssociadoDTO(Associado entity) {
 		id = entity.getId();
 		cpf  = entity.getCpf();
-		voto = entity.getVoto();
 	}
 
 	public Long getId() {
@@ -45,14 +42,6 @@ public class AssociadoDTO implements Serializable {
 		this.cpf = cpf;
 	}
 
-	public Boolean getVoto() {
-		return voto;
-	}
-
-	public void setVoto(Boolean voto) {
-		this.voto = voto;
-	};
-	
 	
 	
 	
