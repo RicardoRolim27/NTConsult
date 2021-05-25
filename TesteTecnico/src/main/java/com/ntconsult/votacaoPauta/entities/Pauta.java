@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +26,7 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "pauta_associados", 
 	joinColumns = @JoinColumn(name = "pauta_id"), 
 	inverseJoinColumns = @JoinColumn(name = "associado_id"))
