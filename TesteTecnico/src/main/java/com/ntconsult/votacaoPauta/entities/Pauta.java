@@ -27,12 +27,6 @@ public class Pauta implements Serializable {
 	private String descricao;
 	
 	
-	@OneToMany(fetch = FetchType.LAZY)
-	@JoinTable(	name = "pauta_associados", 
-	joinColumns = @JoinColumn(name = "pauta_id"), 
-	inverseJoinColumns = @JoinColumn(name = "associado_id"))
-	private Set<Associado> associados = new HashSet<>();
-	
 	public Pauta() {}
 
 	public Pauta(Long id, String descricao) {
@@ -55,15 +49,6 @@ public class Pauta implements Serializable {
 		this.descricao = descricao;
 	}
 	
-	
-
-	public Set<Associado> getAssociados() {
-		return associados;
-	}
-
-	public void setAssociados(Set<Associado> associados) {
-		this.associados = associados;
-	}
 
 	@Override
 	public int hashCode() {
