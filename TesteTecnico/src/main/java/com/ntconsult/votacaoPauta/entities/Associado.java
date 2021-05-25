@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "pauta")
 @Table(name = "associado")
 public class Associado implements Serializable {
 
