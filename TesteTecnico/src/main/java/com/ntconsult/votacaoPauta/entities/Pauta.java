@@ -1,11 +1,17 @@
 package com.ntconsult.votacaoPauta.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +25,12 @@ public class Pauta implements Serializable {
 	private Long id;
 	
 	private String descricao;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinTable(	name = "pauta_associados", 
+	joinColumns = @JoinColumn(name = "pauta_id"), 
+	inverseJoinColumns = @JoinColumn(name = "associado_id"))
+	private Set<Associado> associados = new HashSet<>();
 	
 	public Pauta() {}
 
@@ -40,6 +52,16 @@ public class Pauta implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	
+	
+
+	public Set<Associado> getAssociados() {
+		return associados;
+	}
+
+	public void setAssociados(Set<Associado> associados) {
+		this.associados = associados;
 	}
 
 	@Override
