@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ntconsult.votacaoPauta.dto.AssociadoDTO;
-import com.ntconsult.votacaoPauta.dto.PautaDTO;
 import com.ntconsult.votacaoPauta.services.AssociadoService;
 
 @RestController
