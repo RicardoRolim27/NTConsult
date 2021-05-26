@@ -3,7 +3,9 @@ package com.ntconsult.votacaoPauta.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.devsuperior.dsdeliver.dto.ProductDTO;
 import com.ntconsult.votacaoPauta.entities.Pauta;
 
 public class PautaDTO implements Serializable{
@@ -13,7 +15,7 @@ public class PautaDTO implements Serializable{
 	private Long id;
 	private String descricao;
 	
-	private List<AssociadoDTO> associados = new ArrayList<>();
+	private List<VotoDTO> votos = new ArrayList<>();
 	
 	public PautaDTO() {
 	
@@ -28,6 +30,7 @@ public class PautaDTO implements Serializable{
 	public PautaDTO(Pauta entity) {
 		id = entity.getId();
 		descricao = entity.getDescricao();
+		votos = entity.getVotos().stream().map(x -> new VotoDTO(x)).collect(Collectors.toList());
 	}
 
 	public Long getId() {
@@ -46,12 +49,12 @@ public class PautaDTO implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public List<AssociadoDTO> getAssociados() {
-		return associados;
+	public List<VotoDTO> getAssociados() {
+		return votos;
 	}
 
-	public void setAssociados(List<AssociadoDTO> associados) {
-		this.associados = associados;
+	public void setAssociados(List<VotoDTO> votos) {
+		this.votos = votos;
 	};
 	
 	
