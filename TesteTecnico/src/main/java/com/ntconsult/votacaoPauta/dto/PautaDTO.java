@@ -48,13 +48,14 @@ public class PautaDTO implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public List<VotoDTO> getAssociados() {
+	public List<VotoDTO> getVotos() {
 		return votos;
 	}
 
-	public void setAssociados(List<VotoDTO> votos) {
+	public void setVotos(List<VotoDTO> votos) {
 		this.votos = votos;
-	};
+	}
+
 	
 	
 }
