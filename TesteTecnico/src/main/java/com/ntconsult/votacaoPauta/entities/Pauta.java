@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "pauta_voto",
 		joinColumns = @JoinColumn(name = "pauta_id"),
 		inverseJoinColumns = @JoinColumn(name = "voto_id"))
