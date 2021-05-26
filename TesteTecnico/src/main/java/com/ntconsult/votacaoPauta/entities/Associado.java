@@ -23,7 +23,8 @@ public class Associado implements Serializable {
 	
 	public Associado() {};
 	
-	public Associado(String cpf) {
+	public Associado(Long id, String cpf) {
+		this.id = id;
 		this.cpf = cpf;
 	}
 
