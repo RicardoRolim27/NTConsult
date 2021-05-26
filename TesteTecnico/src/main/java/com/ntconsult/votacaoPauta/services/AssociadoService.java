@@ -23,5 +23,14 @@ public class AssociadoService {
 		
 		return list.stream().map(x -> new AssociadoDTO(x)).collect(Collectors.toList());
 	}
+	
+	@Transactional
+	public AssociadoDTO insert(AssociadoDTO dto) {
+		Associado associado = new Associado(null, dto.getCpf());
+
+		associado = repository.save(associado);
+		
+		return new AssociadoDTO(associado);
+	}
 
 }
