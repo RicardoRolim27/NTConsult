@@ -25,7 +25,8 @@ public class VotoService {
 	
 	@Transactional
 	public VotoDTO insert(VotoDTO dto) {
-		Voto voto = new Voto(null, dto.getVoto(), dto.getPauta(), dto.getAssociado());
+		
+		Voto voto = new Voto(null, true, dto.getPauta(), dto.getAssociado());
 		
 		voto = votoRepo.save(voto);
 		
