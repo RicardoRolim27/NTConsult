@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "pauta")
@@ -25,6 +25,12 @@ public class Pauta implements Serializable {
 	private Long id;
 	
 	private String descricao;
+	
+	@OneToMany
+	@JoinTable(name = "pauta_voto",
+		joinColumns = @JoinColumn(name = "pauta_id"),
+		inverseJoinColumns = @JoinColumn(name = "voto_id"))
+	private Set<Voto> votos = new HashSet<>();
 	
 	
 	public Pauta() {}
@@ -50,6 +56,14 @@ public class Pauta implements Serializable {
 		this.descricao = descricao;
 	}
 	
+	
+	public Set<Voto> getVotos() {
+		return votos;
+	}
+
+	public void setVotos(Set<Voto> votos) {
+		this.votos = votos;
+	}
 
 	@Override
 	public int hashCode() {
