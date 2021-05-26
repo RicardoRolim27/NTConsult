@@ -27,11 +27,11 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
-	@OneToMany(fetch = FetchType.LAZY)
+	/*@OneToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "pauta_voto",
 		joinColumns = @JoinColumn(name = "pauta_id"),
 		inverseJoinColumns = @JoinColumn(name = "voto_id"))
-	private Set<Voto> votos = new HashSet<>();
+	private Set<Voto> votos = new HashSet<>();*/
 	
 	
 	public Pauta() {}
@@ -58,13 +58,13 @@ public class Pauta implements Serializable {
 	}
 	
 	
-	public Set<Voto> getVotos() {
+	/*public Set<Voto> getVotos() {
 		return votos;
 	}
 
 	public void setVotos(Set<Voto> votos) {
 		this.votos = votos;
-	}
+	}*/
 
 	@Override
 	public int hashCode() {
