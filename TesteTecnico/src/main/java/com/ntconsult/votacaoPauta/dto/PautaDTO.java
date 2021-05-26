@@ -3,7 +3,6 @@ package com.ntconsult.votacaoPauta.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.ntconsult.votacaoPauta.entities.Pauta;
 
@@ -29,7 +28,6 @@ public class PautaDTO implements Serializable{
 	public PautaDTO(Pauta entity) {
 		id = entity.getId();
 		descricao = entity.getDescricao();
-		votos = entity.getVotos().stream().map(x -> new VotoDTO(x)).collect(Collectors.toList());
 	}
 
 	public Long getId() {
