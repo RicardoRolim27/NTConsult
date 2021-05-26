@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.devsuperior.dsdeliver.dto.ProductDTO;
 import com.ntconsult.votacaoPauta.entities.Pauta;
 
 public class PautaDTO implements Serializable{
