@@ -1,8 +1,8 @@
 package com.ntconsult.votacaoPauta.dto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.ntconsult.votacaoPauta.entities.Pauta;
@@ -13,23 +13,23 @@ public class PautaDTO implements Serializable{
 	
 	private Long id;
 	private String descricao;
-	private Date dataInicio;
-	private Date dataFim;
-	private Boolean ativa;
+	private LocalDateTime duracao;
 	
 	private List<VotoDTO> votos = new ArrayList<>();
 	
 	public PautaDTO() {}
 
-	public PautaDTO(Long id, String descricao) {
+	public PautaDTO(Long id, String descricao, LocalDateTime duracao) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
+		this.duracao = duracao;
 	}
 
 	public PautaDTO(Pauta entity) {
 		id = entity.getId();
 		descricao = entity.getDescricao();
+		duracao = entity.getDuracao();
 	}
 
 	public Long getId() {
@@ -56,28 +56,12 @@ public class PautaDTO implements Serializable{
 		this.votos = votos;
 	}
 
-	public Date getDataInicio() {
-		return dataInicio;
+	public LocalDateTime getDuracao() {
+		return duracao;
 	}
 
-	public void setDataInicio(Date dataInicio) {
-		this.dataInicio = dataInicio;
-	}
-
-	public Date getDataFim() {
-		return dataFim;
-	}
-
-	public void setDataFim(Date dataFim) {
-		this.dataFim = dataFim;
-	}
-
-	public Boolean getAtiva() {
-		return ativa;
-	}
-
-	public void setAtiva(Boolean ativa) {
-		this.ativa = ativa;
+	public void setDuracao(LocalDateTime duracao) {
+		this.duracao = duracao;
 	}
 
 	
