@@ -26,7 +26,7 @@ public class PautaService {
 		return list.stream().map(x -> new PautaDTO(x)).collect(Collectors.toList());
 	}
 	
-	public Optional<Pauta> findById(Long pautaId) {
+	public Optional<Pauta> GetById(Pauta pautaId) {
 		return pautaRepository.findById(pautaId);
 	}
 	
