@@ -34,7 +34,7 @@ public class PautaService {
 	
 	@Transactional
 	public PautaDTO insert(PautaDTO dto) {
-		Pauta pauta = new Pauta(null, dto.getDescricao());
+		Pauta pauta = new Pauta(null, dto.getDescricao(), dto.getDataInicio(), dto.getDataFim(), dto.getAtiva());
 		
 		pauta = pautaRepository.save(pauta);
 		
