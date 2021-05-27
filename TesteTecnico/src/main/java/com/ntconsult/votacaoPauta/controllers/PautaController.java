@@ -31,8 +31,8 @@ public class PautaController {
 	}
 	
 	@GetMapping("/id")
-	public Optional<Pauta> findById(){
-		Optional<Pauta> list = service.findById();
+	public Optional<Pauta> findById(Pauta pautaId){
+		Optional<Pauta> list = service.GetById(pautaId);
 		
 		return list;
 	}
