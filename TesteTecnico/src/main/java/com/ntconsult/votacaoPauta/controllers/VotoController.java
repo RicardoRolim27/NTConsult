@@ -17,7 +17,7 @@ import com.ntconsult.votacaoPauta.services.VotoService;
 
 
 @RestController
-@RequestMapping(value="/votacao")
+@RequestMapping(value="/voto")
 public class VotoController {
 	
 	@Autowired
