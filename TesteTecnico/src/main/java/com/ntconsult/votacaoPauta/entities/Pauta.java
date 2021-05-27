@@ -1,17 +1,12 @@
 package com.ntconsult.votacaoPauta.entities;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -27,19 +22,23 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
-	/*@OneToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "pauta_voto",
-		joinColumns = @JoinColumn(name = "pauta_id"),
-		inverseJoinColumns = @JoinColumn(name = "voto_id"))
-	private Set<Voto> votos = new HashSet<>();*/
+	private Date dataInicio = new Date();
 	
+	private Date dataFim;
+	
+	private Boolean ativa;
 	
 	public Pauta() {}
 
-	public Pauta(Long id, String descricao) {
+	public Pauta(Long id, String descricao, Date dataInicio, Date dataFim, Boolean ativa) {
+		super();
 		this.id = id;
 		this.descricao = descricao;
+		this.dataInicio = dataInicio;
+		this.dataFim = dataFim;
+		this.ativa = ativa;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -57,14 +56,30 @@ public class Pauta implements Serializable {
 		this.descricao = descricao;
 	}
 	
-	
-	/*public Set<Voto> getVotos() {
-		return votos;
+
+	public Date getDataInicio() {
+		return dataInicio;
 	}
 
-	public void setVotos(Set<Voto> votos) {
-		this.votos = votos;
-	}*/
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public Date getDataFim() {
+		return dataFim;
+	}
+
+	public void setDataFim(Date dataFim) {
+		this.dataFim = dataFim;
+	}
+
+	public Boolean getAtiva() {
+		return ativa;
+	}
+
+	public void setAtiva(Boolean ativa) {
+		this.ativa = ativa;
+	}
 
 	@Override
 	public int hashCode() {
