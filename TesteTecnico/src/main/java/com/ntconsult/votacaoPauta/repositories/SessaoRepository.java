@@ -14,6 +14,6 @@ public interface SessaoRepository extends JpaRepository<Sessao, Long>{
 	
 	List<Sessao> findAll();
 	
-	Optional<Sessao> findByPauta(Pauta pauta);
+	Optional<Sessao> findBypautaId(Pauta pautaId);
 
 }
