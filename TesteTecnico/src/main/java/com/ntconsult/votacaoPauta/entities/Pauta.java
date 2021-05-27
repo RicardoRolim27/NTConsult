@@ -1,7 +1,7 @@
 package com.ntconsult.votacaoPauta.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,21 +22,15 @@ public class Pauta implements Serializable {
 	
 	private String descricao;
 	
-	private Date dataInicio = new Date();
-	
-	private Date dataFim;
-	
-	private Boolean ativa;
+	private LocalDateTime duracao;
 	
 	public Pauta() {}
-
-	public Pauta(Long id, String descricao, Date dataInicio, Date dataFim, Boolean ativa) {
+	
+	public Pauta(Long id, String descricao, LocalDateTime duracao) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
-		this.dataInicio = dataInicio;
-		this.dataFim = dataFim;
-		this.ativa = ativa;
+		this.duracao = duracao;
 	}
 
 
@@ -56,30 +50,15 @@ public class Pauta implements Serializable {
 		this.descricao = descricao;
 	}
 	
-
-	public Date getDataInicio() {
-		return dataInicio;
+	public LocalDateTime getDuracao() {
+		return duracao;
 	}
 
-	public void setDataInicio(Date dataInicio) {
-		this.dataInicio = dataInicio;
+
+	public void setDuracao(LocalDateTime duracao) {
+		this.duracao = duracao;
 	}
 
-	public Date getDataFim() {
-		return dataFim;
-	}
-
-	public void setDataFim(Date dataFim) {
-		this.dataFim = dataFim;
-	}
-
-	public Boolean getAtiva() {
-		return ativa;
-	}
-
-	public void setAtiva(Boolean ativa) {
-		this.ativa = ativa;
-	}
 
 	@Override
 	public int hashCode() {
@@ -105,6 +84,7 @@ public class Pauta implements Serializable {
 			return false;
 		return true;
 	}
+
 
 	
 }
