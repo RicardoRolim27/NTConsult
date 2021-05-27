@@ -28,6 +28,8 @@ public class Sessao implements Serializable{
 	private LocalDateTime inicioVotacao;
 	
 	private LocalDateTime fimVotacao;
+	
+	public Sessao() {}
 
 	public Sessao(Long id, Pauta pautaId, LocalDateTime inicioVotacao, LocalDateTime fimVotacao) {
 		super();
