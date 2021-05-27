@@ -15,6 +15,6 @@ public interface PautaRepository extends JpaRepository<Pauta, Long>{
 
 	List<Pauta> findAllByOrderByIdAsc();
 	
-	Optional<Pauta> findById(Long id);
+	Optional<Pauta> findById(Pauta pautaId);
 
 }
